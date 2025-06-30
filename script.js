@@ -1,6 +1,29 @@
 const input = document.getElementById("markdown-input");
 const preview = document.getElementById("preview");
 
+const themeToggle = document.getElementById("theme-toggle");
+const root = document.body;
+
+function setTheme(isDark) {
+  if (isDark) {
+    root.classList.add("dark");
+    themeToggle.textContent = "☀️ Light Mode";
+    localStorage.setItem("theme", "dark");
+  } else {
+    root.classList.remove("dark");
+    themeToggle.textContent = "🌙 Dark Mode";
+    localStorage.setItem("theme", "light");
+  }
+}
+
+themeToggle.addEventListener("click", () => {
+  const isDark = !root.classList.contains("dark");
+  setTheme(isDark);
+});
+
+// On load
+setTheme(localStorage.getItem("theme") === "dark");
+
 // Configure marked (optional: sanitize HTML)
 marked.setOptions({
   breaks: true,

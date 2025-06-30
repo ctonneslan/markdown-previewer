@@ -1,12 +1,38 @@
 :root {
+  --bg: #ffffff;
+  --panel: #f9fafb;
+  --text: #111827;
+  --accent: #3b82f6;
+  --border-radius: 12px;
+  --shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+}
+
+body.dark {
   --bg: #111827;
   --panel: #1f2937;
   --text: #f3f4f6;
   --accent: #3b82f6;
-  --border-radius: 12px;
   --shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
-  --font: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
+
+#theme-toggle {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: var(--accent);
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.3s ease;
+}
+
+#theme-toggle:hover {
+  background: #2563eb;
+}
+
 
 * {
   box-sizing: border-box;
@@ -26,6 +52,7 @@ body {
 header {
   text-align: center;
   margin-bottom: 2rem;
+  position: relative;
 }
 
 h1 {
