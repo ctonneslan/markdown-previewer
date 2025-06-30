@@ -3,6 +3,14 @@ const preview = document.getElementById("preview");
 
 const themeToggle = document.getElementById("theme-toggle");
 const root = document.body;
+const stats = document.getElementById("stats");
+
+function updateStats(markdown) {
+  const words = markdown.trim().split(/\s+/).filter(Boolean).length;
+  const wordsPerMinute = 200;
+  const readingTime = Math.max(1, Math.round(words / wordsPerMinute));
+  stats.textContent = `Words: ${words} | Estimated Reading Time: ${readingTime} min`;
+}
 
 function setTheme(isDark) {
   if (isDark) {
@@ -39,6 +47,7 @@ updatePreview(input.value);
 // Listen for typing in textarea
 input.addEventListener("input", () => {
   updatePreview(input.value);
+  updateStats(input.value);
 });
 
 function updatePreview(markdown) {
@@ -93,3 +102,5 @@ fileInput.addEventListener("change", (event) => {
 
   reader.readAsText(file);
 });
+
+updateStats(input.value);

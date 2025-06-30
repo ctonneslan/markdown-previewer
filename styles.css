@@ -152,3 +152,7 @@ textarea {
 #import-area input[type="file"] {
   margin-top: 0.5rem;
 }
+
+#stats {
+  user-select: none;
+}
