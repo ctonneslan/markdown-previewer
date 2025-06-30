@@ -1,0 +1,97 @@
+:root {
+  --bg: #111827;
+  --panel: #1f2937;
+  --text: #f3f4f6;
+  --accent: #3b82f6;
+  --border-radius: 12px;
+  --shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
+  --font: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: var(--font);
+  line-height: 1.6;
+  padding: 1rem;
+  min-height: 100vh;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--accent);
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+@media (min-width: 768px) {
+  .container {
+    flex-direction: row;
+  }
+}
+
+.input-area,
+.preview-area {
+  flex: 1;
+  background: var(--panel);
+  padding: 1rem;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+}
+
+h2 {
+  margin-bottom: 1rem;
+  font-size: 1.25rem;
+  color: var(--accent);
+}
+
+textarea {
+  width: 100%;
+  height: 400px;
+  padding: 1rem;
+  font-size: 1rem;
+  background: #374151;
+  color: var(--text);
+  border: none;
+  border-radius: var(--border-radius);
+  resize: vertical;
+  font-family: monospace;
+}
+
+#preview {
+  background: #1e293b;
+  padding: 1rem;
+  border-radius: var(--border-radius);
+  overflow-y: auto;
+  max-height: 400px;
+}
+
+#preview h1,
+#preview h2,
+#preview h3 {
+  color: var(--accent);
+}
+
+#preview code {
+  background: #0f172a;
+  padding: 0.25rem 0.5rem;
+  border-radius: 6px;
+  font-family: monospace;
+  color: #93c5fd;
+}
