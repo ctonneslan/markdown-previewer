@@ -42,8 +42,12 @@ input.addEventListener("input", () => {
 });
 
 function updatePreview(markdown) {
-  // Sanitize output using DOMPurify if needed
   preview.innerHTML = marked.parse(markdown);
+
+  // Highlight all code blocks
+  preview.querySelectorAll("pre code").forEach((block) => {
+    hljs.highlightElement(block);
+  });
 }
 
 document.getElementById("copy-html").addEventListener("click", () => {
