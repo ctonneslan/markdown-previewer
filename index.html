@@ -15,10 +15,19 @@
     <div class="container">
       <section class="input-area">
         <h2>Markdown Input</h2>
+        <div class="import-area">
+          <label for="file-upload">📂 Import Markdown File:</label>
+          <input type="file" id="file-upload" accept=".md, .markdown, .txt" />
+        </div>
+
         <textarea id="markdown-input" placeholder="Type Markdown here..."># Hello, Markdown!</textarea>
       </section>
       <section class="preview-area">
         <h2>Preview</h2>
+        <div class="export-buttons">
+          <button id="copy-html">📋 Copy HTML</button>
+          <button id="download-html">💾 Download HTML</button>
+        </div>
         <div id="preview"></div>
       </section>
     </div>

@@ -95,3 +95,33 @@ textarea {
   font-family: monospace;
   color: #93c5fd;
 }
+
+.export-buttons {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.export-buttons button {
+  background: var(--accent);
+  color: white;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  transition: background 0.3s ease;
+  font-weight: 600;
+}
+
+.export-buttons button:hover {
+  background: #2563eb;
+}
+
+.import-area {
+  margin-bottom: 1rem;
+  color: var(--text);
+}
+
+#import-area input[type="file"] {
+  margin-top: 0.5rem;
+}
